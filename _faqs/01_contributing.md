@@ -1,0 +1,11 @@
+---
+name: Contributing
+---
+
+### How Can I Contribute Articles to this Site?
+
+The content of this site is managed on GitHub. If you would like publish an article here, simply [fork us on GitHub](https://github.com/osgi-users-virtual/osgi-users-virtual.github.io) and submit a Pull Request. See the [GitHub Help Documentation](https://help.github.com/categories/collaborating-with-issues-and-pull-requests/) for guidance.
+
+Note: this site is curated for quality and compliance with the terms of our Trademark License Agreement with the OSGi Alliance, so we cannot guarantee to publish your content. If you are considering producing content for us, it may be a good idea to discuss it on the [mailing list](https://groups.google.com/forum/#!forum/osgi-users-virtual) first.
+
+All content published here remains the property of its original author, however we require it to be licensed under the terms of the [Creative Commons Attribution-ShareAlike 4.0 International Public License](https://creativecommons.org/licenses/by-sa/4.0/).
