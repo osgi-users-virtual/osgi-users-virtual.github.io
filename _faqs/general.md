@@ -1,12 +1,6 @@
 ---
-layout: default_well
+name: General
 ---
-
-Frequently Asked Questions
-==========================
-
-General
--------
 
 ### What is the Connection Between the OSGi Alliance and the Virtual OSGi Users' Forum?
 
@@ -26,4 +20,4 @@ See the [OSGi Alliance membership page](https://www.osgi.org/join/).
 
 Just like Harry S. Truman's middle initial, OSGi does not actually stand for anything! The full name of the technology is simply OSGi.
 
-The [OSGi Alliance](https://www.osgi.org) was formerly known as the "Open Services Gateway initiative", but that name is now obsolete.
+The [OSGi Alliance](https://www.osgi.org) was formerly known as the "Open Services Gateway initiative", but that name is obsolete.
