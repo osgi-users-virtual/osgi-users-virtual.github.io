@@ -5,12 +5,16 @@ layout: default
 {% for post in paginator.posts %}
 <div class="article">
     <div class="well">
-        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
-        {% if site.comments and post.comments %}
-            {% if site.disqus != '' %}
-            <p class="author"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread" data-disqus-identifier="{{ post.url | slugify }}">Comments</a></p>
-            {% elsif site.isso != '' %}
-            <p class="author"><a href="{{ site.baseurl }}{{ post.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
+        {% if post.external-url %}
+            <h1><a href="{{ post.external-url }}" target="_blank">{{ post.date | date: "%d %B %Y" }} &mdash; {{ post.title }} <span class="glyphicon glyphicon-new-window"></span></a></h1>
+        {% else %}
+            <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%d %B %Y" }} &mdash; {{ post.title }}</a></h1>
+            {% if site.comments and post.comments %}
+                {% if site.disqus != '' %}
+                <p class="author"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread" data-disqus-identifier="{{ post.url | slugify }}">Comments</a></p>
+                {% elsif site.isso != '' %}
+                <p class="author"><a href="{{ site.baseurl }}{{ post.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
+                {% endif %}
             {% endif %}
         {% endif %}
         <div class="content">

@@ -44,6 +44,8 @@ body {
 .well h1 {
     color: #ee4444;
     font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .well h2 {
     color: #ee4444;

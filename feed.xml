@@ -10,6 +10,15 @@ layout: null
 		<link>{{ site.url }}{{ site.baseurl }}</link>
 		<atom:link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/rss+xml" />
 		{% for post in site.posts limit:10 %}
+			{% if post.external-url %}
+			<item>
+				<title>{{ post.title }}</title>
+				<description>External Content</description>
+				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+				<link>{{ post.external-url }}</link>
+				<guid isPermaLink="true">{{ post.external-url }}</guid>
+			</item>
+			{% else %}
 			<item>
 				<title>{{ post.title }}</title>
 				<description>{{ post.content | xml_escape }}</description>
@@ -17,6 +26,7 @@ layout: null
 				<link>{{ site.url }}{{ site.baseurl}}{{ post.url }}</link>
 				<guid isPermaLink="true">{{ site.url }}{{ site.baseurl}}{{ post.url }}</guid>
 			</item>
+			{% endif %}
 		{% endfor %}
 	</channel>
 </rss>
