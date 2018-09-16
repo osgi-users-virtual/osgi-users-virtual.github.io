@@ -4,6 +4,10 @@ title:  Announcing the Virtual OSGi™ Users' Forum
 date:   2018-09-11 12:00:00
 categories: general
 tags: [general, announce]
+author:
+    name: Neil Bartlett
+    email: njbartlett@gmail.com
+    twitter: nbartlett
 ---
 
 Welcome to the Virtual OSGi™ Users' Forum!

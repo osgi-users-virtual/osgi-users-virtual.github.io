@@ -8,7 +8,7 @@
         <div class="col-md-9">
           <div class="article">
             <div class="well">
-                <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.date | date: "%b %-d, %Y" }} - {{ page.title }}</a></h1>
+                <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a></h1>
             {% if site.comments and page.comments %}
                 {% if site.disqus != '' %}
                 <p class="author"><a href="#disqus_thread" data-disqus-identifier="{{ page.url | slugify }}">Comments</a></p>
@@ -19,6 +19,19 @@
             <div class="post-content">
             {{ content }}
             </div>
+            {% if page.author %}
+                <p class="author">
+                    <img class="img-rounded" src="{{ page.author.email | to_gravatar:50 }}"/>
+                    Posted on {{ page.date | date: "%d %B %Y" }} by <a href="mailto:{{ page.author.email }}">{{ page.author.name }}</a>
+                    {% if page.author.twitter %}
+                        (<a href="https://twitter.com/{{ page.author.twitter }}" target="_blank">@{{ page.author.twitter }}</a>)
+                    {% endif %}
+                </p>
+            {% else %}
+                <p class="author">
+                    Posted on {{ page.date | date: "%d %B %Y" }} by Anonymous.
+                </p>
+            {% endif %}
             {% if page.comments %}
                 {% if site.disqus != '' %}
             <div id="disqus_thread">
