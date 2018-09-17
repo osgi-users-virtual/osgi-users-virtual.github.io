@@ -36,7 +36,9 @@ paginate: 3
 
 highlighter: rouge
 markdown: kramdown
-gems: ['jekyll-paginate']
+gems:
+  - jekyll-paginate
+  - jekyll-avatar
 
 exclude: ['README.md', 'LICENSE', 'Gemfile', 'Gemfile.lock']
 

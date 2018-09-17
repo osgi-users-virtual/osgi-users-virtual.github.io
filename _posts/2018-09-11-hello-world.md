@@ -8,6 +8,7 @@ author:
     name: Neil Bartlett
     email: njbartlett@gmail.com
     twitter: nbartlett
+    github: njbartlett
 ---
 
 Welcome to the Virtual OSGi™ Users' Forum!

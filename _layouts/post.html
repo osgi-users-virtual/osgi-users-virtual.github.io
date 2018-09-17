@@ -21,7 +21,9 @@
             </div>
             {% if page.author %}
                 <p class="author">
-                    <img class="img-rounded" src="{{ page.author.email | to_gravatar:50 }}"/>
+                    {% if page.author.github %}
+                        {% avatar {{ page.author.github }} %}
+                    {% endif %}
                     Posted on {{ page.date | date: "%d %B %Y" }} by <a href="mailto:{{ page.author.email }}">{{ page.author.name }}</a>
                     {% if page.author.twitter %}
                         (<a href="https://twitter.com/{{ page.author.twitter }}" target="_blank">@{{ page.author.twitter }}</a>)
