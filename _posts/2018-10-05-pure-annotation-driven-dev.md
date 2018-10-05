@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Pure Annotation-Driven Bundle Development
-date:   2018-10-04 12:00:00
+date:   2018-10-05 11:00:00
 categories: tooling
 tags:
     - tooling
