@@ -19,7 +19,7 @@ layout: default
         {% endif %}
         <div class="content">
             {% if post.content contains "<!-- more -->" %}
-                {{ post.content | split:"<!-- more -->" | first % }}
+                {{ post.content | split:"<!-- more -->" | first }}
                 <p><a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></p>
             {% else %}
                 {{ post.content }}
