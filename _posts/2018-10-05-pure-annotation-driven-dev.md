@@ -65,6 +65,8 @@ Before starting you will need to have the OSGi R7 Annotations library on your bu
 
 **N.B.**: you can use this dependency even if you are not yet ready to upgrade to OSGi Release 7 as your runtime platform. The annotations are only retained in the class files, so they do not create a runtime dependency.
 
+Some of the functionality mentioned below requires bnd version 4.0.0 (the latest stable release in October 2018) or higher.
+
 Package Exports and Versioning
 ------------------------------
 
@@ -153,7 +155,7 @@ And writing a required capability looked like this:
     Require-Capability: osgi.implementation; \
         filter:='(&(osgi.implementation=osgi.http)(version>=1.0.0)(!(version>=2.0.0)))'
 
-The complexity of this syntax has not exactly encouraged adoption of this fantastic OSGi feature. With the new `@Capability` and `@Requirement` annotations, it becomes much easier to use. We can use these annotations directly on our own classes, but they are most convenient when used as *meta-annotation*. That is, we apply these annotations to our own annotations when defining an API. For example, we can define the following annotation:
+The complexity of this syntax has not exactly encouraged adoption of this fantastic OSGi feature. With the new `@Capability` and `@Requirement` annotations, it becomes much easier to use. We can use these annotations directly on our own classes, but they are most convenient when used as *meta-annotations*. That is, we apply these annotations to our own annotations when defining an API. For example, we can define the following annotation:
 
 ```java
 @Requirement(
