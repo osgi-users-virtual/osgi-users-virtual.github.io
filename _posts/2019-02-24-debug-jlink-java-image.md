@@ -15,6 +15,8 @@ Recently I've been playing at pairing OSGi development with Java's `jlink` mecha
 
 Progress was being made until I needed to debug an issue which only manifested *after* `jlink`.
 
+<!-- more -->
+
 ## Attempt #1
 
 My first instinct was simply too add the often used command line options to for debugging, usually something like:
