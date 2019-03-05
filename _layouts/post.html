@@ -3,7 +3,7 @@
 
   {%- include templates/head.html -%}
   
-  {%- capture style -%} {%- include styles/base.css -%} {%- include styles/content.css -%} {%- endcapture -%}
+  {%- capture style -%} {%- include styles/base.css -%} {%- include styles/nested.css -%} {%- include styles/content.css -%} {%- endcapture -%}
   
   <style>
 	{{- style | strip_newlines -}}

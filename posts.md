@@ -1,5 +1,5 @@
 ---
-layout: nested
+layout: blog
 title: Blog
 navbaritem: true
 ---

@@ -10,7 +10,7 @@
 .highlight .kr { color: {{primaryColor}}; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: {{primaryColor}}; font-weight: bold } /* Keyword.Type */
 .highlight .s { color: {{primaryLightColor}} } /* Literal.String */
-.highlight .na { color: {{accentColor}} } /* Name.Attribute */
+.highlight .na { color: {{secondaryTextColor}} } /* Name.Attribute */
 .highlight .nc { color: {{accentColor}}} /* Name.Class */
 .highlight .nd { color: {{secondaryTextColor}} } /* Name.Decorator */
 .highlight .nf { color: {{accentColor}} } /* Name.Function */
