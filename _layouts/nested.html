@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include templates/head.html -%}
+  
+  <!-- Is it a content or a nested page -->
+	{% assign isContent = true %}
+	{% assign isNested = false %}
+	{% if page.files %}
+		{% assign isContent = false %}
+		{% assign isNested = true %}
+	{% endif %}
+	{% if page.subfolders %}
+		{% assign isContent = false %}
+		{% assign isNested = true %}
+	{% endif %}
+  
+	{%- capture style -%} {%- include styles/base.css -%} {%- include styles/nested.css -%} {%- include styles/content.css -%} {%- endcapture -%}
+  
+  <style>
+	{{- style | strip_newlines -}}
+  </style>
+
+  <body>
+	<!-- Navigation Header -->
+	{% include templates/header.html %}
+	
+	{% assign rootPath = page.url | remove: ".html" | append: "/" %}
+  <main>	
+  <div class="container">
+		<div class="row">			
+		
+		
+		{% if isNested %}
+			<div class="section col s12">
+				{% include templates/breadcrumbs.html %}				
+			</div>
+			<!--add all files in this folder-->
+			{% for file in page.files %}
+			<!-- create path to the file --> 
+				{% assign fileHTMLPath = rootPath | append: file | append: ".html" %}
+				<!--find the file-->
+				{% for collection in site.collections %}				
+					{% assign htmlFile = collection.docs | where_exp:"item", "item.url == fileHTMLPath" | first  %}
+					{% if htmlFile %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+				
+				<!--create a card for each-->
+				<div class="col s12 m8 push-m2 l6 xl4">
+					<div class="card small hoverable">
+						<div class="card-content">
+						  <span class="card-title">{{ htmlFile.title }}</span>
+						  <p>{{ htmlFile.description}}</p>
+						</div>
+						<div class="card-action">
+						  <a class="card-action-link" href="{{"" | relative_url | prepend: site.url | append: fileHTMLPath}}">Go to {{htmlFile.title | downcase}}</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			<!-- add all subfolders-->
+			{% for subfolder in page.subfolders %}
+				<!-- create path to the info.html file that is mandatory for each subfolder --> 
+				{% assign subfolderInfoHTMLPath = rootPath | append: subfolder | append: ".html" %}
+				<!--find the subfolderInfo.md file-->
+				{% for collection in site.collections %}				
+					{% assign subfolderInfo = collection.docs | where_exp:"item", "item.url == subfolderInfoHTMLPath" | first  %}
+					{% if subfolderInfo %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+				<!--create a card for each-->
+				<div class="col s12 m8 push-m2 l6 xl4">
+					<div class="card small hoverable">
+						<div class="card-content">
+						  <span class="card-title">{{ subfolderInfo.title }}</span>
+						  <p>{{ subfolderInfo.description}}</p>
+						</div>
+						<div class="card-action">
+						  <a class="card-action-link" href="{{"" | relative_url | prepend: site.url | append: subfolderInfoHTMLPath}}">Go to {{subfolderInfo.title | downcase}}</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			<div id="text-content" class="section col s12 l10">			
+				{{content}}
+			</div>
+			<div class="col hide-on-med-and-down l2">
+				<div id="toc-wrapper" class="toc-wrapper pin-top">
+				  <ul id="toc" class="section table-of-contents">
+					
+				  </ul>
+				</div>
+			</div>
+		{% else %}
+			<div id="text-content" class="section col s12 l10">
+				{% include templates/breadcrumbs.html %}
+				{{content}}
+		    </div>
+			<div class="col hide-on-med-and-down l2">
+				<div id="toc-wrapper" class="toc-wrapper pin-top">
+				  <ul id="toc" class="section table-of-contents">
+					
+				  </ul>
+				</div>
+			</div>
+		{% endif %}
+		
+    </div> 
+  </div>
+  </main>
+	{% include templates/footer.html %}      
+	{% include templates/base_script.html %}	
+	{% include templates/content_script.html %}	
+  </body>
+
+</html>

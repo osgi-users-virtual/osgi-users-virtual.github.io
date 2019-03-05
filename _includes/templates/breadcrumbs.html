@@ -1,0 +1,31 @@
+{% assign segments = page.url | split: "/" %}
+{% assign numSegments = segments | size %}
+{% if numSegments > 1 %}
+<nav class="breadcrumbs">
+	<div class="nav-wrapper">
+	{% assign currentPath = "" %}
+	{% for segment in segments %}
+		{%if segment != "" %}
+			{% assign path = "" | relative_url | prepend: site.url | append: currentPath | append: "/" | append: segment | remove: ".html" | append: ".html" %}
+			{% assign pathUrl = currentPath | append: "/" | append: segment | remove: ".html" | append: ".html" %}
+			
+			{% assign pathPage = site.documentation | where_exp:"item", "item.url == pathUrl" | first %}
+			
+			{% for collection in site.collections %}				
+				{% assign pathPage = collection.docs | where_exp:"item", "item.url == pathUrl" | first %}
+				{% if pathPage %}
+					{% break %}
+				{% endif %}
+			{% endfor %}
+				{% if pathPage %}
+				<a href="{{ path }}" class="breadcrumb">{{pathPage.title}}</a>
+				{% else %}
+					{% assign pathPage = site.pages | where_exp:"item", "item.url == pathUrl" | first %}
+					<a href="{{ path }}" class="breadcrumb">{{pathPage.title}}</a>
+				{% endif %}
+			{% assign currentPath = currentPath | append: "/" | append: segment | remove: ".html" %}
+		{% endif %}
+	{% endfor %}
+	</div>
+</nav>
+{% endif %}

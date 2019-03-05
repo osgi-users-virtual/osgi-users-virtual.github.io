@@ -1,46 +1,45 @@
-# Jekyll configuration
+title: VUG
+author: Neil Bartlett
+email: TODO
+description: Virtual OSGi Users' Group
 
-name: Virtual OSGi™ Users' Forum
-description: An open, worldwide forum for users of OSGi™ technology.
-logo: /images/logo-200px.png
+# language to use in html tag, can be overriden by page.lang
+# lang: en 
 
-# url is currently only used only for the RSS feed in feed.xml
-url: https://virtual.osgiusers.org/
+sass:
+    style: compressed
 
-# baseurl will often be '', but for a project page on gh-pages, it needs to
-# be the project name.
-# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
-#     run it like so: jekyll serve --baseurl=''
-baseurl:
+# You can look up the color names at http://materializecss.com/color.html
+colors:
+    primary_dark: osgi-dark-blue
+    primary_light: osgi-light-blue
+    primary: osgi-blue
+    accent: osgi-orange
+    primary_text: grey-darken-4
+    secondary_text: grey-darken-1
+    inverse_text: white
+    divider: grey-lighten-1
+    secondaryBackground: grey-lighten-4
 
-# These can be '' to hide the Github or Gitlab nav buttons
-github: 'osgi-users-virtual'
-gitlab: ''
+# path to logo without leading slash e.g. images/logo.png or just the file name if it is in the root directory
+logo: logo.png
 
-# Set this to your UA-# value, or '' to disable the block completely
-gaaccount: ''
+# Github data, if present there will be a GitHub button in the navbar
+github_button:
+  user: osgi-users-virtual
+  project: osgi-users-virtual.github.io
 
-# The 'comments' setting enables comments. You'll need to select either
-# disqus or isso below to choose a comment system. Individual posts can
-# override 'comments' to disable on a post-by-post basis.
-comments: true
+# Twitter data, if present there will be a Twitter button in the navbar
+twitter_button:
+  user: osgi_vug
 
-# Set this to your public isso URL to enable comments via isso. Set to '' to disable isso.
-isso: ''
-
-# Set this to your disqus shortname to enable comments via disqus. Set to '' to disable disqus.
-disqus: ''
-
-permalink: /:year/:month/:title
-paginate: 3
-
-highlighter: rouge
-markdown: kramdown
-gems:
-  - jekyll-paginate
-  - jekyll-avatar
-
-exclude: ['README.md', 'LICENSE', 'Gemfile', 'Gemfile.lock']
-
+# any of these collections is used for nested pages
 collections:
-  - faqs
+  landingpage:
+    output: true
+  resources:
+    output: true
+  posts:
+    output: true
+  faq:
+    output: true
