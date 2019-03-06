@@ -9,6 +9,7 @@ author:
     email: rotty3000@gmail.com
     twitter: rotty3000
     github: rotty3000
+description: Recently I've been playing at pairing OSGi development with Java's `jlink` mechanism. Small, fit for purpose applications seem to be the norm these days and since OSGi has all the qualities required to achieve this it seems natural to pursue this combination. Progress was being made until I needed to debug an issue which only manifested *after* `jlink`. 
 ---
 # Debugging JLink'd Java Image
 

@@ -48,17 +48,19 @@
 				{% endfor %}
 				
 				<!--create a card for each-->
-				<div class="col s12 m8 push-m2 l6 xl4">
-					<div class="card small hoverable">
-						<div class="card-content">
-						  <span class="card-title">{{ htmlFile.title }}</span>
-						  <p>{{ htmlFile.description}}</p>
-						</div>
-						<div class="card-action">
-						  <a class="card-action-link" href="{{"" | relative_url | prepend: site.url | append: fileHTMLPath}}">Go to {{htmlFile.title | downcase}}</a>
+				<a href="{{"" | relative_url | prepend: site.url | append: fileHTMLPath}}">
+					<div class="col s12 m8 push-m2 l6 xl4">
+						<div class="card small hoverable">
+							<div class="card-content">
+							  <span class="card-title">{{ htmlFile.title }}</span>
+							  <p>{{ htmlFile.description | truncatewords: 14}}</p>
+							</div>
+							<div class="card-action">
+							  GO TO {{htmlFile.title | upcase}}
+							</div>
 						</div>
 					</div>
-				</div>
+				</a>
 			{% endfor %}
 			<!-- add all subfolders-->
 			{% for subfolder in page.subfolders %}
@@ -72,17 +74,19 @@
 					{% endif %}
 				{% endfor %}
 				<!--create a card for each-->
-				<div class="col s12 m8 push-m2 l6 xl4">
-					<div class="card small hoverable">
-						<div class="card-content">
-						  <span class="card-title">{{ subfolderInfo.title }}</span>
-						  <p>{{ subfolderInfo.description}}</p>
-						</div>
-						<div class="card-action">
-						  <a class="card-action-link" href="{{"" | relative_url | prepend: site.url | append: subfolderInfoHTMLPath}}">Go to {{subfolderInfo.title | downcase}}</a>
+				<a class="card-action-link" href="{{"" | relative_url | prepend: site.url | append: subfolderInfoHTMLPath}}">
+					<div class="col s12 m8 push-m2 l6 xl4">
+						<div class="card small hoverable">
+							<div class="card-content">
+							  <span class="card-title">{{ subfolderInfo.title }}</span>
+							  <p>{{ subfolderInfo.description | truncatewords: 14}}</p>
+							</div>
+							<div class="card-action">
+							  GO TO {{subfolderInfo.title | upcase}}
+							</div>
 						</div>
 					</div>
-				</div>
+				</a>
 			{% endfor %}
 			<div id="text-content" class="section col s12 l10">			
 				{{content}}

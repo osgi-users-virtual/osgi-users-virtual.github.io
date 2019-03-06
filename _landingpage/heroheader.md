@@ -2,7 +2,7 @@
 layout: heroheader
 button:
   text: Get Started!
-  url: https://sandared.github.io/documentation_template/documentation.html
+  url: https://sandared.github.io/osgi-users-virtual.github.io/resources.html
 title: Virtual OSGi Users' Group
 subtitle: The Easy Way Towards OSGi
 ---

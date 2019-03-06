@@ -1,5 +1,5 @@
 ---
-layout: nested
+layout: forum
 title: Forum
 navbaritem: true
 ---
