@@ -1,5 +1,5 @@
 ---
-layout: nested
+layout: faqs
 title: FAQ
 navbaritem: true
 ---

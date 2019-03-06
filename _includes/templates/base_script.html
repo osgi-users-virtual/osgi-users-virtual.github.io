@@ -1,5 +1,8 @@
 <!--  Scripts-->  
 
-<script src="{{ "assets/js/jquery.min.js" | relative_url }}"></script>
-<script src="{{ "assets/js/materialize.min.js" | relative_url }}"></script>
-<script src="{{ "assets/js/init.js" | relative_url }}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+  });
+</script>
