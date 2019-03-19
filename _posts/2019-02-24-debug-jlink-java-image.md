@@ -29,27 +29,22 @@ Once included, the argument:
 
 should work as expected.
 
-Thanks to an industry colleague for instructing me on the correct way to do this. :) You know who you are!
+------
 
+_Thanks to an industry colleague for instructing me on the correct way to do this. :) You know who you are!_
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### Ignore everything bellow this line (leaving it for posterity only.)
+_Ignore everything bellow this line (leaving it for posterity only.)_
 
 ------
 
