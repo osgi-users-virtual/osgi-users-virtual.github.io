@@ -36,7 +36,7 @@ paginate: 3
 
 highlighter: rouge
 markdown: kramdown
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-avatar
 
