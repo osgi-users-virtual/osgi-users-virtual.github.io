@@ -17,6 +17,26 @@ Progress was being made until I needed to debug an issue which only manifested *
 
 <!-- more -->
 
+## Update [Mar 19, 2019]
+
+As it turns out all you need to do is make sure that your `jlink`'d modules include `jdk.jdwp.agent`. 
+
+Once included, the argument:
+
+```txt
+-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
+```
+
+should work as expected.
+
+Thanks to an industry colleague for instructing me on the correct way to do this. :) You know who you are!
+
+
+
+##### Ignore everything bellow this line (leaving it for posterity only.)
+
+------
+
 ## Attempt #1
 
 My first instinct was simply too add the often used command line options to for debugging, usually something like:
