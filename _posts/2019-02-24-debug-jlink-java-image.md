@@ -19,7 +19,7 @@ Progress was being made until I needed to debug an issue which only manifested *
 
 ## Update [Mar 19, 2019]
 
-As it turns out all you need to do is make sure that your `jlink`'d modules include `jdk.jdwp.agent`. 
+As it turns out all you need to do is make sure that your `jlink`'d modules include `jdk.jdwp.agent`.
 
 Once included, the argument:
 
@@ -33,7 +33,7 @@ Thanks to an industry colleague for instructing me on the correct way to do this
 
 
 
-##### Ignore everything bellow this line (leaving it for posterity only.)
+#### Ignore everything bellow this line (leaving it for posterity only.)
 
 ------
 
