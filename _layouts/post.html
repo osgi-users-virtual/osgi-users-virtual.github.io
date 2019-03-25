@@ -1,62 +1,35 @@
-{% include header.html %}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-<div class="container container-left">
-    <div class="row">
-        <div class="col-md-3">
-            {% include sidebar.html %}
-        </div>
-        <div class="col-md-9">
-          <div class="article">
-            <div class="well">
-                <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a></h1>
-            {% if site.comments and page.comments %}
-                {% if site.disqus != '' %}
-                <p class="author"><a href="#disqus_thread" data-disqus-identifier="{{ page.url | slugify }}">Comments</a></p>
-                {% elsif site.isso != '' %}
-                <p class="author"><a href="{{ site.baseurl }}{{ page.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
-                {% endif %}
-            {% endif %}
-            <div class="post-content">
-            {{ content }}
-            </div>
-            {% if page.author %}
-                <p class="author">
-                    {% if page.author.github %}
-                        {% avatar {{ page.author.github }} %}
-                    {% endif %}
-                    Posted on {{ page.date | date: "%d %B %Y" }} by <a href="mailto:{{ page.author.email }}">{{ page.author.name }}</a>
-                    {% if page.author.twitter %}
-                        (<a href="https://twitter.com/{{ page.author.twitter }}" target="_blank">@{{ page.author.twitter }}</a>)
-                    {% endif %}
-                </p>
-            {% else %}
-                <p class="author">
-                    Posted on {{ page.date | date: "%d %B %Y" }} by Anonymous.
-                </p>
-            {% endif %}
-            {% if page.comments %}
-                {% if site.disqus != '' %}
-            <div id="disqus_thread">
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-                {% elsif site.isso != '' %}
-                <section id="isso-thread"></section>
-                {% endif %}
-            {% endif %}
-            </div>
-          </div>
-          <div class="pagination">
-              {% if page.next %}
-                <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next">Newer Post</a>
-              {% endif %}
-              {% if page.previous %}
-                <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">Older Post</a>
-              {% endif %}
-          </div>
-        </div>
-    </div>
-</div>
+  {%- include templates/head.html -%}
+  
+  {%- capture style -%} {%- include styles/base.css -%} {%- include styles/nested.css -%} {%- include styles/content.css -%} {%- endcapture -%}
+  
+  <style>
+	{{- style | strip_newlines -}}
+  </style>
 
-{% include disqus-comments.html %}
-{% include footer.html %}
+  <body>
+	<!-- Navigation Header -->
+	{% include templates/header.html %}
+  <main>	
+  <div class="container">
+		<div class="row">			
+			<div id="text-content" class="section col s12 l10">
+				{{content}}
+		    </div>
+			<div class="col hide-on-med-and-down l2">
+				<div id="toc-wrapper" class="toc-wrapper pin-top">
+				  <ul id="toc" class="section table-of-contents">
+					
+				  </ul>
+				</div>
+			</div>
+        </div> 
+  </div>
+  </main>
+	{% include templates/footer.html %}      
+	{% include templates/base_script.html %}	
+	{% include templates/content_script.html %}	
+  </body>
+</html>

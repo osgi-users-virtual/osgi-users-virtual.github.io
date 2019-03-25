@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include templates/head.html -%}
+  
+	{%- capture style -%} {%- include styles/base.css -%} {%- include styles/nested.css -%} {%- include styles/content.css -%} {%- endcapture -%}
+  
+  <style>
+	{{- style | strip_newlines -}}
+  </style>
+
+  <body>
+	<!-- Navigation Header -->
+	{% include templates/header.html %}
+  <main>	
+  <div class="container">
+		<div class="row">	
+			<div class="section col s12">
+				{% include templates/breadcrumbs.html %}				
+			</div>
+			{% for post in site.posts %}
+			<!--create a card for each-->
+			<a href="{{post.url}}">
+			<div class="col s12 m8 push-m2 l6 xl4">
+				<div class="card small hoverable">
+					<div class="card-content">
+					  <span class="card-title">{{ post.title }}</span>
+					  <p>{{ post.description | truncatewords: 14}}</p>
+					</div>
+					<div class="card-action">
+					  {{ post.date | date_to_string }} - by {{post.author.name  }} 
+					</div>
+				</div>
+			</div>
+			</a>
+			{% endfor %}	
+    </div> 
+  </div>
+  </main>
+	{% include templates/footer.html %}      
+	{% include templates/base_script.html %}	
+	{% include templates/content_script.html %}	
+  </body>
+
+</html>
