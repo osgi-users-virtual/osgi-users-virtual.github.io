@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include templates/head.html -%}
+  
+	{%- capture style -%} {%- include styles/base.css -%} {%- include styles/nested.css -%} {%- include styles/content.css -%} {%- endcapture -%}
+  
+  <style>
+	{{- style | strip_newlines -}}
+  </style>
+
+  <body>
+	<!-- Navigation Header -->
+	{% include templates/header.html %}
+  <main>	
+  <div class="container">
+			<div class="section col s12">
+				{% include templates/breadcrumbs.html %}				
+			</div>
+		<div class="row">	
+			
+			
+			<ul class="collapsible">
+			{% for faq in site.faqs %}
+				<!--create a callpsible for each-->
+				<li>
+				  <div class="collapsible-header"><h5>{{ faq.question }}</h5></div>
+				  <div class="collapsible-body"><span>{{ faq.content }}</span></div>
+				</li>
+			{% endfor %}	
+			</ul>
+    </div> 
+  </div>
+  </main>
+	{% include templates/footer.html %}      
+	{% include templates/base_script.html %}	
+	{% include templates/content_script.html %}	
+	{% include templates/faqs_script.html %}	
+  </body>
+
+</html>

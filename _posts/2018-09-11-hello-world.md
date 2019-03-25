@@ -9,7 +9,9 @@ author:
     email: njbartlett@gmail.com
     twitter: nbartlett
     github: njbartlett
+description: Welcome to the Virtual OSGi™ Users' Forum! We are a worldwide community of users of OSGi™ technology. The forum exists to promote the use of OSGi™ technology through articles, tutorials, demonstrations and other educational material. It is run by the community, for the community. We will shortly begin moving content from various pre-existing sources onto this site.
 ---
+# Announcing the Virtual OSGi™ Users' Forum
 
 Welcome to the Virtual OSGi™ Users' Forum!
 

@@ -9,44 +9,15 @@ author:
     email: rotty3000@gmail.com
     twitter: rotty3000
     github: rotty3000
+description: Recently I've been playing at pairing OSGi development with Java's `jlink` mechanism. Small, fit for purpose applications seem to be the norm these days and since OSGi has all the qualities required to achieve this it seems natural to pursue this combination. Progress was being made until I needed to debug an issue which only manifested *after* `jlink`. 
 ---
+# Debugging JLink'd Java Image
 
 Recently I've been playing at pairing OSGi development with Java's `jlink` mechanism. Small, fit for purpose applications seem to be the norm these days and since OSGi has all the qualities required to achieve this it seems natural to pursue this combination.
 
 Progress was being made until I needed to debug an issue which only manifested *after* `jlink`.
 
 <!-- more -->
-
-## Update [Mar 19, 2019]
-
-As it turns out all you need to do is make sure that your `jlink`'d modules include `jdk.jdwp.agent`.
-
-Once included, the argument:
-
-```txt
--Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
-```
-
-should work as expected.
-
-------
-
-_Thanks to an industry colleague for instructing me on the correct way to do this. :) You know who you are!_
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-_Ignore everything bellow this line (leaving it for posterity only.)_
-
-------
 
 ## Attempt #1
 

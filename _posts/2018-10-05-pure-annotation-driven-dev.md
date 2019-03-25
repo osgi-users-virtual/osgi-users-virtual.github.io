@@ -11,7 +11,9 @@ author:
     email: njbartlett@gmail.com
     twitter: nbartlett
     github: njbartlett
+description: "This article desribes how to move to a purely annotation and code-driven model for building OSGi bundles. Under this model, the content of the bundle manifest is generated both from information inherent in the Java code — such as package-level dependencies — and from Java source annotations. No separate descriptor is needed, either as a separate file or as a configuration section in a Maven POM. This ensures that crucial information about the bundle stays close to where it arises: the Java code."
 ---
+# Pure Annotation-Driven Bundle Development
 
 This article desribes how to move to a purely annotation and code-driven model for building OSGi bundles. Under this model, the content of the bundle manifest is generated both from information inherent in the Java code — such as package-level dependencies — and from Java source annotations. No separate descriptor is needed, either as a separate file or as a configuration section in a Maven POM. This ensures that crucial information about the bundle stays close to where it arises: the Java code.
 
